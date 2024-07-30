@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
     .then((response) => response.json())
     .then((data) => {
       const questions = data.results;
-      console.log(data.results);
+      console.log(questions);
 
       questions.forEach((trivia) => {
         const triviaCard = document.createElement('div');
@@ -19,6 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const optionsElement = document.createElement('div');
         optionsElement.className = 'options';
+        triviaCard.appendChild(optionsElement);
 
         if (trivia.difficulty === 'easy') {
           triviaCard.style.backgroundColor = '#93f5ac';
@@ -39,12 +40,10 @@ document.addEventListener('DOMContentLoaded', () => {
           optionsElement.appendChild(optionElement);
 
           optionElement.addEventListener('click', () => {
-            // Clear previous highlights
             optionsElement.querySelectorAll('.option').forEach((opt) => {
               opt.classList.remove('correct', 'incorrect');
             });
 
-            // Highlight selected option
             if (option === trivia.correct_answer) {
               optionElement.classList.add('correct');
             } else {
@@ -53,12 +52,11 @@ document.addEventListener('DOMContentLoaded', () => {
           });
         });
 
-        triviaCard.appendChild(optionsElement);
         triviaContainer.appendChild(triviaCard);
       });
     })
     .catch((error) => {
-      triviaContainer.innerHTML = 'Failed to load questions.';
+      triviaContainer.innerText = 'Failed to load questions.';
       console.error('Error fetching the trivia questions:', error);
     });
 });

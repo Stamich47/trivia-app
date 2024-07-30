@@ -4,7 +4,7 @@
 }
 
 body {
-  margin: 0;
+  margin: auto;
   font-family: Arial, sans-serif;
   background-color: #dff1f1;
 }
@@ -18,7 +18,6 @@ body {
     'nav'
     'main'
     'footer';
-  grid-gap: 10px;
 }
 
 header {
@@ -33,7 +32,7 @@ header {
 nav {
   grid-area: nav;
   background-color: #f4f4f469;
-  padding: 10px;
+  padding: 20px;
 }
 
 nav > ul {
@@ -41,7 +40,7 @@ nav > ul {
   gap: 8vw;
   list-style-type: none;
   justify-content: center;
-  max-width: 600px;
+  max-width: 800px;
   margin: auto;
 }
 
@@ -72,7 +71,7 @@ main {
   padding: 20px;
   background-color: #fff;
   border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
   width: 300px;
   margin: 20px auto;
 }
@@ -95,11 +94,11 @@ main {
   border-radius: 4px;
   text-align: center;
   cursor: pointer;
-  transition: background-color 0.3s;
 }
 
 .option:hover {
   background-color: #6b928d9a;
+  transition: background-color 0.3s;
 }
 
 footer {
@@ -113,16 +112,16 @@ footer {
 /* Answer Right or Wrong after click */
 
 .option.correct {
-  background: #28a745; /* Green background for correct option */
+  background: #28a745;
   position: relative;
 }
 
 .option.incorrect {
-  background: #dc3545; /* Red background for incorrect option */
+  background: #dc3545;
 }
 
 .option.correct::after {
-  content: '✓';
+  content: '✔';
   position: absolute;
   right: 10px;
   top: 50%;
