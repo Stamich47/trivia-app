@@ -6,16 +6,18 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
+  background-color: #dff1f1;
 }
+
 .container {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: auto;
   grid-template-areas:
-    "header"
-    "nav"
-    "main"
-    "footer";
+    'header'
+    'nav'
+    'main'
+    'footer';
   grid-gap: 10px;
 }
 
@@ -24,12 +26,13 @@ header {
   background-color: #4493cf;
   color: white;
   text-align: center;
-  padding: 10px;
+  padding: 20px;
+  text-shadow: 3px 3px 10px rgb(24, 43, 39);
 }
 
 nav {
   grid-area: nav;
-  background-color: #f4f4f4;
+  background-color: #f4f4f469;
   padding: 10px;
 }
 
@@ -42,14 +45,67 @@ nav > ul {
   margin: auto;
 }
 
+nav a:link,
+a:visited,
+a:hover,
+a:active {
+  text-decoration: none;
+  color: #0a1b29;
+}
+
+nav a:hover {
+  color: rgb(34, 102, 102);
+  transition: 0.3s;
+}
+
 main {
   grid-area: main;
   padding: 10px;
+  margin: 10px;
+  text-align: center;
+}
+
+.trivia-card {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  gap: 20px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  margin: 20px auto;
+}
+
+.question {
+  font-size: 1.2em;
+  font-weight: bold;
+  text-align: center;
+}
+
+.options {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+
+.option {
+  background-color: #e0e0e0;
+  padding: 10px;
+  border-radius: 4px;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.option:hover {
+  background-color: #6b928d9a;
 }
 
 footer {
   grid-area: footer;
-  background-color: #ddd;
+  background-color: #f4f4f469;
   text-align: center;
   padding: 10px;
+  font-size: 12px;
 }
