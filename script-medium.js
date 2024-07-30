@@ -2,7 +2,9 @@ const triviaContainer = document.getElementById('container');
 const numberOfQuestions = 5;
 
 document.addEventListener('DOMContentLoaded', () => {
-  fetch(`https://opentdb.com/api.php?amount=${numberOfQuestions}`)
+  fetch(
+    `https://opentdb.com/api.php?amount=${numberOfQuestions}&difficulty=medium`
+  )
     .then((response) => response.json())
     .then((data) => {
       const questions = data.results;

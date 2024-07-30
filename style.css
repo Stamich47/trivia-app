@@ -109,3 +109,23 @@ footer {
   padding: 10px;
   font-size: 12px;
 }
+
+/* Answer Right or Wrong after click */
+
+.option.correct {
+  background: #28a745; /* Green background for correct option */
+  position: relative;
+}
+
+.option.incorrect {
+  background: #dc3545; /* Red background for incorrect option */
+}
+
+.option.correct::after {
+  content: '✓';
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.2em;
+}
